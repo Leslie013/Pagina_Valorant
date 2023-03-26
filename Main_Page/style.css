@@ -5,7 +5,11 @@
 }
 
 body {
-	font-family: Arial, sans-serif;
+  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/794261398674884618/70682F2D11DA38F66CFC5D25531314FECA139468/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+  font-family: Arial, sans-serif;
 }
 
 header {

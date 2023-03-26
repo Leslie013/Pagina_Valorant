@@ -3,20 +3,56 @@ body {
 	padding: 0;
 	font-family: Arial, sans-serif;
 	background-image: url("https://wallpaperaccess.com/full/6727996.png");
-	background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: 'Rajdhani', sans-serif;
 }
 
+.barra {
+	margin-left: 500px;
+}
 
+.forma{
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+#paralelogramo {
+    width: 190px; 
+    height: 50px; 
+    background: #ff0000;
+    -webkit-transform: skew(-20deg); 
+    -moz-transform: skew(-20deg); 
+    -o-transform: skew(-20deg); 
+    
+ }
+
+ #cuadrado {
+    width: 50px;
+    height: 50px;
+    
+ }
+ .uno {
+    width: 35px;
+    height: 5px;
+    background:#ff0000;
+    margin-top: 9px;
+    margin-left: 10px;
+ }
 
 a {
 	text-decoration: none;
-	color: #ff0000;
+	color: #ffffff;
+	size: 35px;
+	font-family: 'Orbitron', sans-serif;
 }
 
 ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	
 }
 
 header {
@@ -35,19 +71,20 @@ header {
 
 nav ul {
 	display: flex;
-	float: right;
+	float: left;
 }
 
 nav ul li {
 	margin: auto;
     padding: 25px 0;
-  
+    float: right;
 	
 }
 
 nav ul li a {
-	padding: 10px;
+	padding: 5px;
 	right: 50px;
+	
 }
 
 nav ul li a:hover {
@@ -69,12 +106,9 @@ h1, h2, h3 {
 .contenedor-descripcion {
 	width: 800px;
 	height: 450px;
-	background-color: #ffffff;
+	background-color: #000000ad;
 	margin: auto;
-}
-
-.contenedor-descripcion::before {
-	opacity: .6;
+	color: white;	
 }
 
 .descripcion {
@@ -82,22 +116,55 @@ h1, h2, h3 {
 }
 
 .descripcion h1 {
-	font-size: 36px;
+	font-size: 40px;
 	margin-bottom: 20px;
+	text-align: center;
+	font-family: 'Orbitron', sans-serif;
 }
 
 .descripcion p {
+	margin: 3px 15px 6px 15px;
 	font-size: 20px;
 	line-height: 1.5;
+	color: white;
+}
+
+.call-to-action {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.call-to-action h2 {
+	font-size: 36px;
+	margin-bottom: 20px;
+	font-family: 'Rajdhani', sans-serif;
+	font-family: 'Orbitron', sans-serif;
+}
+
+.call-to-action a {
+	background-color: #ff0000;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 24px;
+	margin: 0;
+}
+
+.call-to-action a:hover {
+	background-color: #e54c4c;
 }
 
 .quienes-somos {
+	background-color: #000000bb;
 	margin-top: 50px;
 }
 
 .quienes-somos h2 {
 	font-size: 36px;
 	margin-bottom: 20px;
+	color: white;
+	text-align: center;
+	font-family: 'Orbitron', sans-serif;
 }
 
 .quienes-somos ul {
@@ -123,33 +190,13 @@ h1, h2, h3 {
 .quienes-somos h3 {
 	font-size: 24px;
 	margin-bottom: 10px;
+	color: white;
 }
 
 .quienes-somos p {
 	font-size: 16px;
 	line-height: 1.5;
-}
-
-.call-to-action {
-	margin-top: 50px;
-	text-align: center;
-}
-
-.call-to-action h2 {
-	font-size: 36px;
-	margin-bottom: 20px;
-}
-
-.call-to-action a {
-	background-color: #ff5c5c;
-	color: #fff;
-	padding: 10px 20px;
-	border-radius: 5px;
-	font-size: 24px;
-}
-
-.call-to-action a:hover {
-	background-color: #e54c4c;
+	color: white;
 }
 
 .carrusel {
@@ -204,18 +251,18 @@ h1, h2, h3 {
     top: 40%;
     transform: translateY(-50%);
     background: none;
-    border: rgb(255, 0, 0);
-    font-size: 8rem;
-    color: #ffffff;
+    border: rgb(255, 255, 255);
+    font-size: 10rem;
+    color: #ff0000;
     cursor: pointer;
     z-index: 1;
   }
 
   .prev-btn {
-    left: 0;
+    left: -80px;
   }
   .next-btn {
-    right: 0;
+    right: -80px;
   }
 
 .seccion-contacto {
