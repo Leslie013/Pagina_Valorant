@@ -62,31 +62,37 @@ nav form button[type="submit"] {
     color: red;
 }
 
-#content1 {
+.content1 {
     width: 400px;
     height: 400px;
     margin: auto;
     margin-top: 2%;
 }
 
-.fotoPerfil {
+.fotoPerfil img {
     width: 300px;
-	height: 300px;
-	border-radius: 50%;
-	margin-right: 10px;
-    background-color: blue;
+   	height: 300px;
+	  border-radius: 50%;
+	  margin-right: 10px;
     margin: auto;
 }
 
-#content1 p {
+.content1 p {
     color: #000000;
     text-align: center;
     font-size: 30px;
 }
 
-#content1 a {
+a {
     color: #000000;
-    font-size: 16px;  
+    font-size: 20px; 
+    text-align: center;
+    list-style: none;
+
+}
+
+li {
+  list-style: none;
 }
 
 .contenedor {
@@ -99,23 +105,39 @@ nav form button[type="submit"] {
 
   .div-izquierdo {
     width: 400px;
-    height: 200px;
+    height: 300px;
     margin-left: 12%;
-    background-color: #909221; 
+    background-image: url("https://cdn-cf.ginx.tv/respawn-cdn/M7lqotmebUaiN3TWDIR1_srwQ_kB0dQuDr8SovhDUls/fill/1280/0/no/1/aHR0cHM6Ly93d3cuZ2lueC50di91cGxvYWRzMi9WYWxvcmFudC9BZ2VudF9UaWVyX2xpc3RfMy5qcGc.webp"); 
+    background-size: cover;
+    border-radius: 30px;
   }
   
   .div-derecho {
     width: 400px;
-    height: 200px;
+    height: 300px;
     margin-right: 12%;
-    background-color: #00c8f4; 
+    background-image: url("https://dotesports.com/br/wp-content/uploads/sites/3/2022/03/16191216/E23__2EVEAMXuBH-1536x864-1.jpg"); 
+    background-size: cover;
+    border-radius: 30px;
   }
 
   .favoritos, .personajes {
     width: calc(50% - 10px);
   }
-  
-  .favoritos h2, .personajes h2 {
-    text-align: center;
-    margin-bottom: 10px;
+
+  #paralelogramo {
+    width: 190px; 
+    height: 50px; 
+    margin-left: 300px;
+    background: #ff0000;
+    -webkit-transform: skew(-20deg); 
+    -moz-transform: skew(-20deg); 
+    -o-transform: skew(-20deg); 
   }
+
+  .forma{
+    display: inline-block;
+    margin-top: 15px;
+    justify-content: space-between;
+  }
+
