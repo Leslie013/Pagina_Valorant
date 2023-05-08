@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/794261398674884618/70682F2D11DA38F66CFC5D25531314FECA139468/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+  background-image: url("fondo.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -31,8 +31,8 @@ nav form input[type="text"] {
 	padding: 10px;
 	border-radius: 5px 0 0 5px;
 	border: none;
-    margin-left: 200px;    
-    width: 500px;
+  margin-left: 200px;    
+  width: 500px;
 }
 
 nav form button[type="submit"] {
@@ -75,6 +75,7 @@ nav form button[type="submit"] {
 	  border-radius: 50%;
 	  margin-right: 10px;
     margin: auto;
+    display: flex;
 }
 
 .content1 p {
@@ -107,9 +108,11 @@ li {
     width: 400px;
     height: 300px;
     margin-left: 12%;
-    background-image: url("https://cdn-cf.ginx.tv/respawn-cdn/M7lqotmebUaiN3TWDIR1_srwQ_kB0dQuDr8SovhDUls/fill/1280/0/no/1/aHR0cHM6Ly93d3cuZ2lueC50di91cGxvYWRzMi9WYWxvcmFudC9BZ2VudF9UaWVyX2xpc3RfMy5qcGc.webp"); 
+    background-image: url("https://esports.as.com/2021/04/10/valorant/Agentes-VALORANT_1454264572_655188_1440x810.jpg"); 
     background-size: cover;
     border-radius: 30px;
+    border: 5px solid #fb2525;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
   }
   
   .div-derecho {
@@ -119,6 +122,8 @@ li {
     background-image: url("https://dotesports.com/br/wp-content/uploads/sites/3/2022/03/16191216/E23__2EVEAMXuBH-1536x864-1.jpg"); 
     background-size: cover;
     border-radius: 30px;
+    border: 5px solid #fb2525;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
   }
 
   .favoritos, .personajes {

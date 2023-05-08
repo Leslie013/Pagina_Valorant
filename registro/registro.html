@@ -4,33 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de usuario</title>
+    <title>Registro</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="registro.css">
 </head>
 <body>
+
+    <div class="container">
+      <div class="encabezado">
+        <div class="title">
+         <h1>REGISTRARSE</h1>
+        </div>
+        <div class="contenedor-logo">
+          <img class="logo" src="logo.jpg">
+        </div>
+      </div>
     
-    <div class="Formulario">
-       <h1>REGISTARSE</h1>
-    <form method="post">
-      
-      <div class="Nombre">
-         <div><input type="text" id="nombre" placeholder="nombre">
-    </div> 
-    
-    <div class="Correo">
-        
-        <div><input class="Correo" type="text" id="Correo" placeholder="Correo">
+            <form id="registerForm" action="../sign/sign.html" method="POST">
+                <div class="form-group">
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="password">Contraseña:</label>
+                  <input type="password" id="password" name="password" required>
+              </div>
+              <div class="form-group">
+                  <label for="date">Fecha de nacimiento:</label>
+                  <input type="date" id="date" name="date" required>
+              </div>
+                <div class="form-group">
+                    <button type="submit" class="iniciar">CREAR</button>
+                </div>
+
+                <div class="form-group">
+                    ¿Ya tienes una cuenta? <a href="../sign/sign.html">Inicia sesión aquí</a>
+                </div>
+            </form>
     </div>
 
-      <div class="Contraseña">
-        <div><input class="Contraseña" type="contraseña" id="contraseña" placeholder="contraseña">
-      </div>
-      <div class="terminos"> <h4> Acepto los términos y condiciones</h4>
-        <input type="checkbox">
-      <input type="button" value="Crear"><a href="file:///C:/Users/lesli/OneDrive/Desktop/Pagina%20Valorant/Main_Page/main_page.html"></a>
-      <img src="logo.jpg" Class="Logo" />
-    </form>
-
+    <script src="../js/login.js"></script>
+    <script>
+        let registerForm = document.getElementById("registerForm");
+        //Generar el evento submit
+        registerForm.addEventListener("submit", (e) => {
+            //Obtener los datos del formulario
+            let username    = document.getElementById("username").value;
+            let email       = document.getElementById("email").value;
+            let password    = document.getElementById("password").value;
+            let date        = document.getElementById("date").value;
+            //Llamar a la clase User para crear el nuevo registro
+            const user = new User()
+            user.add(username, email, password, date);
+            alert('Usuario creado.');
+        });
+        
+    </script>
 </body>
 </html>

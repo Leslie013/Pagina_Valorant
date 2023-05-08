@@ -14,30 +14,51 @@
             <div class="logo">
                 <img src="https://logolook.net/wp-content/uploads/2022/12/Valorant-Logo.png" alt="Logo">
             </div>
-            <form>
+            <form action="../main_page/main_page.html" method="POST" id="loginForm">
                 <div class="form-group">
                     <label for="username">Nombre de usuario:</label>
-                    <input type="text" id="username" name="username">
+                    <input type="email" id="username" name="username" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Recordar contraseña</label>
+                    <label><input type="checkbox" id="remember" value="first_checkbox"> Recordar contraseña</label>
                 </div>
                 <div class="form-group">
                     <a href="#">¿Olvidaste tu contraseña?</a>
                 </div>
                 <div class="form-group">
-                    <button type="submit"><a class="iniciar" href="file:///C:/Users/lesli/OneDrive/Desktop/Pagina%20Valorant/Main_Page/main_page.html">Iniciar sesión</button></a>
+                    <button type="submit" class="iniciar">Iniciar sesión</button>
+                </div>
+
+                <div class="form-group">
+                    ¿Aún no tienes una cuenta? <a href="..//registro/registro.html">Crea una aquí</a>
                 </div>
             </form>
-            <div class="signup">
-                ¿Aún no tienes una cuenta? <a href="file:///C:/Users/lesli/OneDrive/Desktop/Pagina%20Valorant/Registro/registro.html">Crea una aquí</a>
-            </div>
-     </div>
-
+    </div>
+    <script src="../js/login.js"></script>
+    <script>
+        let loginForm = document.getElementById("loginForm");
+        //Generar el evento submit
+        loginForm.addEventListener("submit", (e) => {
+            //Obtener el usuario y contraseña
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            //Validar que el usuario y contraseña este registrado
+            const userData      = localStorage.getItem("userData")
+            const userDataJSON  = JSON.parse(userData)
+            if (userDataJSON != null && username === userDataJSON.email && password === userDataJSON.password) {
+                alert('Bienvenido');
+                // Crear usuario como logueado en localstorage
+                const userString = JSON.stringify(userDataJSON)
+                localStorage.setItem("loggedUser", userString)
+            }else{
+                e.preventDefault();
+                alert('Usuario o contraseña incorrectos');
+            }
+        });
+    </script>
 </body>
 </html>

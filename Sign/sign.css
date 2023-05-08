@@ -39,17 +39,13 @@ label {
 }
 
 input[type="text"],
-input[type="password"],
-input[type="checkbox"] {
+input[type="email"],
+input[type="password"] {
 	width: 80%;
 	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	font-size: 16px;
-}
-
-input[type="checkbox"] {
-	margin-right: 10px;
 }
 
 a {
@@ -61,7 +57,7 @@ button {
 	color: #fff;
 	padding: 10px 20px;
 	border: none;
-	border-radius: 5px;
+	border-radius: 10px 0px;
 	font-size: 16px;
 	cursor: pointer;
 }
