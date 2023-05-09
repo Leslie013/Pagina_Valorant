@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="favoritos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
-   
-    <title>Favoritos</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="favoritos.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Favoritos</title>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png" alt="logo">
-            </div>
-            <div class="search">
-                <form>
-                    <input type="text" placeholder="Buscar...">
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
-            <div class="user-info">
-                <img src="https://areajugones.sport.es/wp-content/uploads/2020/08/Valorant-Acto-2-1024x576.jpg" alt="User Image">
-                <p><a href="#" onclick="logOut()">Cerrar sesión</a></p>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <div class="logo">
+        <a
+          href="../main_page/main_page.html">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png"
+            alt="logo">
+        </a>
+      </div>
 
-    <div id="paralelogramo" class="forma"><h1>FAVORITOS</h1></div>
+      <div class="search">
+        <form>
+          <input type="text" placeholder="Buscar...">
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+      <div class="user-info">
+        <img src="https://cdna.artstation.com/p/assets/images/images/037/741/800/large/rebecca-lavoie-jett.jpg?1626451896"
+          alt="User Image">
+        <p><a href="#" onclick="logOut()">Cerrar sesión</a></p>
+      </div>
+    </nav>
+  </header>
 
-    <div class="container">
-		<div class="card">
-			<img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltceaa6cf20d328bd5/5eb7cdc1b1f2e27c950d2aaa/V_AGENTS_587x900_Jett.png">
-		</div>
-		<div class="card">
-			<img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6577b1f58530e6b2/5eb7cdc121a5027d77420208/V_AGENTS_587x900_Reyna.png">
-		</div>
-		<div class="card">
-			<img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt81e8a3e8c7beeaf3/634894a15e281916980f655b/Harbor_KeyArt-web.png">
-		</div>
-		<div class="card">
-			<img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6fef56a8182d0a81/5ebf2c2798f79d6925dbd6b4/V_AGENTS_587x900_ALL_Raze_2.png">
-		</div>
-		<div class="card">
-			<img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt8093ba7b5e84ed05/61d8a63ddea73a236fc56d12/Neon_KeyArt-Web.png">
-		</div>
-		<div class="card">
-			<img src="https://static.wikia.nocookie.net/valorant/images/0/06/Omen_artwork.png/revision/latest?cb=20200811210909&path-prefix=es">
-		</div>
-	</div>
-    <script src="../js/main.js"></script>
+  <div id="paralelogramo" class="forma">
+    <h1>PERSONAJES</h1>
+  </div>
+  <!-- Contenedor -->
+  <div id="container" class="container">
+  </div>
+  
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <p class="style-title">Información del personaje</p>
+      </div>
+      <div class="modal-body">
+        <div id="imagen"></div>
+        <p id="nombre"></p>
+        <p id="descripcion"></p>
+        <p id="caracteristica"></p>
+        <p id="rol"></p>
+      </div>
+    </div>
+  </div>
+  <script src="../js/main.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/personajes.js"></script>
+  <script src="../js/buscador.js"></script>
+
+  <script>
+    const contenedor = document.getElementById("container")
+    for (let i = 0; i < data.length; i++) {
+      const obj = data[i]
+      const personaje = new Personaje(obj.displayName, obj.description, obj.developerName, obj.bustPortrait)
+      contenedor.innerHTML += personaje.toHtml()
+    }
+
+    let modal = document.getElementById("myModal");
+    let close = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    close.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    function ver(name) {
+      let personaje = data.filter(obj => obj.displayName == name)[0]
+      //Abrir modal
+      modal.style.display = "block";
+      //Obtener elementos
+      let imagen = document.getElementById("imagen");
+      let nombre = document.getElementById("nombre");
+      let descripcion = document.getElementById("descripcion");
+      let caracteristica = document.getElementById("caracteristica");
+      let rol = document.getElementById("rol");
+      //Pintar data en los elementos
+      imagen.innerHTML = `<img src="${personaje.displayIconSmall}" class="img-personaje"> `;
+      nombre.innerHTML = `<span><b>Nombre</b>: ${personaje.displayName}</span>`;
+      descripcion.innerHTML = `<span><b>Descripción</b>: ${personaje.description}</span>`;
+      caracteristica.innerHTML = `<span><b>Caracteristica</b>: ${personaje.developerName}</span>`;
+      rol.innerHTML = `<span><b>Rol</b>: ${personaje.role.displayName}</span>`;
+    }
+  </script>
 </body>
+
 </html>
