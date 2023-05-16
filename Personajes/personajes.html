@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="personajes.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>Personajes</title>
 </head>
 
@@ -22,11 +23,8 @@
         </a>
       </div>
 
-      <div class="search">
-        <form>
-          <input type="text" placeholder="Buscar...">
-          <button type="submit">Buscar</button>
-        </form>
+      <div class="buscador">
+          <input type="text" id="search" placeholder="Buscar nombre del personaje...">
       </div>
       <div class="user-info">
         <img src="https://cdna.artstation.com/p/assets/images/images/037/741/800/large/rebecca-lavoie-jett.jpg?1626451896"
@@ -63,7 +61,6 @@
   <script src="../js/main.js"></script>
   <script src="../js/data.js"></script>
   <script src="../js/personajes.js"></script>
-  <script src="../js/buscador.js"></script>
 
   <script>
     const contenedor = document.getElementById("container")

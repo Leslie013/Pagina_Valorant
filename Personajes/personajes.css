@@ -28,23 +28,21 @@ nav {
 	width: 90px;
 }
 
-nav form input[type="text"] {
+#search {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 20px;
+	background-color: white;
+	border: 2px solid red;
 	padding: 10px;
-	border-radius: 5px 0 0 5px;
-	border: none;
-    margin-left: 200px;    
-    width: 500px;
-}
+	width: 900px;
+	height: 200px;
+	min-height: 40px;
+	max-height: 50px;
+	margin-left: 40px; 
 
-nav form button[type="submit"] {
-	padding: 10px 20px;
-	background-color: #fff;
-	color: #000000;
-	width: 100px;
-	border-radius: 0 5px 5px 0;
-	border: none;
-	cursor: pointer;
-}
+  }
 
 .user-info {
 	display: flex;
