@@ -1,103 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="favoritos.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Favoritos</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../personajes/personajes.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/74ef459e52.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nova+Oval&family=Orbitron:wght@600&family=Rajdhani:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>personajes</title>
 </head>
-
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-        <a
-          href="../main_page/main_page.html">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png"
-            alt="logo">
-        </a>
-      </div>
-
-      <div class="search">
-        <form>
-          <input type="text" placeholder="Buscar...">
-          <button type="submit">Buscar</button>
-        </form>
-      </div>
-      <div class="user-info">
-        <img src="https://cdna.artstation.com/p/assets/images/images/037/741/800/large/rebecca-lavoie-jett.jpg?1626451896"
-          alt="User Image">
-        <p><a href="#" onclick="logOut()">Cerrar sesión</a></p>
-      </div>
-    </nav>
-  </header>
-
-  <div id="paralelogramo" class="forma">
-    <h1>PERSONAJES</h1>
-  </div>
-  <!-- Contenedor -->
-  <div id="container" class="container">
-  </div>
-  
-  <!-- Modal -->
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <p class="style-title">Información del personaje</p>
-      </div>
-      <div class="modal-body">
-        <div id="imagen"></div>
-        <p id="nombre"></p>
-        <p id="descripcion"></p>
-        <p id="caracteristica"></p>
-        <p id="rol"></p>
-      </div>
-    </div>
+    <header>
+        <nav>
+          <div class="logo">
+            <a
+              href="../main_page/main_page.html">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png"
+                alt="logo">
+            </a>
+          </div>
+    
+          <div class="buscador">
+              <input type="text" class="search" id="searchInput" placeholder="Buscar nombre del personaje...">
+          </div>
+          <div class="user-info">
+            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"
+              alt="User Image">
+            <p><a href="#" onclick="logOut()">Cerrar sesión</a></p>
+          </div>
+        </nav>
+    </header>
+ <div id="paralelogramo" class="forma">
+        <h1 class="titlePersonajes">
+        <a href="../personajes/personajes.html"><i class="fa-sharp fa-regular fa-circle-left fa-beat"></a></i>FAVORITOS<a href="../main_page/main_page.html"><i class="fa-regular fa-circle-right fa-beat"></a></i></h1> 
+       
+ </div>
+  <div class="card-container" id="characterList"></div>
+  <div id="modalContainer" class="modal-container"></div>
   </div>
   <script src="../js/main.js"></script>
-  <script src="../js/data.js"></script>
-  <script src="../js/personajes.js"></script>
-  <script src="../js/buscador.js"></script>
-
-  <script>
-    const contenedor = document.getElementById("container")
-    for (let i = 0; i < data.length; i++) {
-      const obj = data[i]
-      const personaje = new Personaje(obj.displayName, obj.description, obj.developerName, obj.bustPortrait)
-      contenedor.innerHTML += personaje.toHtml()
-    }
-
-    let modal = document.getElementById("myModal");
-    let close = document.getElementsByClassName("close")[0];
-    // When the user clicks on <span> (x), close the modal
-    close.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    function ver(name) {
-      let personaje = data.filter(obj => obj.displayName == name)[0]
-      //Abrir modal
-      modal.style.display = "block";
-      //Obtener elementos
-      let imagen = document.getElementById("imagen");
-      let nombre = document.getElementById("nombre");
-      let descripcion = document.getElementById("descripcion");
-      let caracteristica = document.getElementById("caracteristica");
-      let rol = document.getElementById("rol");
-      //Pintar data en los elementos
-      imagen.innerHTML = `<img src="${personaje.displayIconSmall}" class="img-personaje"> `;
-      nombre.innerHTML = `<span><b>Nombre</b>: ${personaje.displayName}</span>`;
-      descripcion.innerHTML = `<span><b>Descripción</b>: ${personaje.description}</span>`;
-      caracteristica.innerHTML = `<span><b>Caracteristica</b>: ${personaje.developerName}</span>`;
-      rol.innerHTML = `<span><b>Rol</b>: ${personaje.role.displayName}</span>`;
-    }
-  </script>
+  <script src="../js/favoritos.js"></script>
 </body>
 
 </html>
