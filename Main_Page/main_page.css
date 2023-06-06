@@ -92,8 +92,17 @@ a {
 
 }
 
+.Per {
+  color: #000000;
+  font-size: 40px; 
+  text-align: center;
+  list-style: none;
+
+}
+
 li {
   list-style: none;
+  
 }
 
 .contenedor {
@@ -131,9 +140,19 @@ li {
   }
 
   #paralelogramo {
-    width: 190px; 
+    width: 200px; 
     height: 50px; 
-    margin-left: 300px;
+    margin-left: 20%;
+    background: #ff0000;
+    -webkit-transform: skew(-20deg); 
+    -moz-transform: skew(-20deg); 
+    -o-transform: skew(-20deg); 
+  }
+
+  #paralelogramo1 {
+    width: 200px; 
+    height: 50px; 
+    margin-left: 30%;
     background: #ff0000;
     -webkit-transform: skew(-20deg); 
     -moz-transform: skew(-20deg); 
@@ -142,7 +161,7 @@ li {
 
   .forma{
     display: inline-block;
-    margin-top: 15px;
     justify-content: space-between;
+    width: auto;
   }
 
